@@ -1,0 +1,40 @@
+.footer {
+  height: 40vh;
+  width: 100vw;
+  background-color: $color-black;
+  position: relative;
+
+  &__title {
+    font-size: 4rem;
+    color: $color-green;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5rem;
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 3rem;
+      }
+    }
+  }
+
+  &__social {
+    height: 3rem;
+    width: 3rem;
+    transition: all 0.3s;
+    fill: $color-white;
+
+    &:hover {
+      fill: $color-green;
+    }
+  }
+}
