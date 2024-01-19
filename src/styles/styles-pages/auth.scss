@@ -1,0 +1,107 @@
+.auth {
+  @include base;
+  margin-bottom: 30rem;
+  // overflow-x: hidden;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 30rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  &__input {
+    margin: 1rem 0;
+    width: 30rem;
+    height: 5rem;
+
+    padding: 1rem 2rem;
+
+    &::placeholder {
+      text-transform: uppercase;
+    }
+
+    &:active,
+    &:focus {
+      outline: 1px solid $color-green;
+      border: 1px solid $color-green;
+    }
+  }
+
+  &__label {
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    align-self: start;
+    margin-top: 1rem;
+  }
+
+  &__btn {
+    @include button;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+
+  &__redirect {
+    text-align: center;
+    margin-top: 3rem;
+
+    & a {
+      color: $color-green;
+    }
+  }
+
+  &__icon {
+    &--1 {
+      position: absolute;
+      top: -20rem;
+      left: -40rem;
+
+      width: 55rem;
+      height: 55rem;
+
+      @include respond(phone) {
+        width: 30rem;
+        height: 30rem;
+        top: -10rem;
+        left: -20rem;
+      }
+    }
+
+    &--2 {
+      position: absolute;
+      bottom: -20rem;
+      right: -40rem;
+
+      transform: rotate(90deg);
+
+      width: 35rem;
+      height: 35rem;
+
+      @include respond(tab-land) {
+        bottom: -10rem;
+        right: -10rem;
+      }
+
+      @include respond(tab-port) {
+        bottom: -20rem;
+        right: -20rem;
+      }
+      @include respond(phone) {
+        width: 30rem;
+        height: 30rem;
+        bottom: -25rem;
+
+        transform: rotate(50deg);
+      }
+    }
+  }
+}

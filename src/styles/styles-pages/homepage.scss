@@ -1,0 +1,262 @@
+.homepage {
+  overflow-x: hidden;
+
+  &__top {
+    background: url(https://celes.club/uploads/posts/2022-06/thumbs/1654133327_43-celes-club-p-skeit-oboi-krasivie-48.jpg)
+      no-repeat center;
+
+    background-attachment: fixed;
+
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+
+    @include respond(phone) {
+      background-position: 0rem 0rem;
+    }
+
+    &-title {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      text-align: center;
+      font-size: 9rem;
+      line-height: 5rem;
+
+      & span {
+        font-family: $font-title;
+        color: $color-white;
+      }
+    }
+
+    &-btn {
+      @include button;
+      text-transform: uppercase;
+      font-size: 3rem;
+
+      &-container {
+        position: relative;
+        top: 50%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__new {
+    width: 50%;
+    margin: 10rem auto;
+    overflow-x: hidden;
+
+    @include respond(desktop) {
+      width: 70%;
+    }
+
+    @include respond(tab-port) {
+      width: 90%;
+    }
+
+    @include respond(tab-port) {
+      width: 90%;
+    }
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-title {
+      font-size: 7rem;
+
+      & span {
+        color: $color-green;
+      }
+    }
+
+    &-btn {
+      @include button;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      &-container {
+        margin-top: 2rem;
+      }
+    }
+
+    &-img {
+      width: 70rem;
+    }
+
+    &-skates {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-around;
+      margin: 5rem auto;
+
+      @include respond(tab-land) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+
+        @include respond(phone) {
+          gap: 0;
+        }
+      }
+
+      &-dark {
+        background-color: rgba(black, 0.5);
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        margin: 1rem 2rem;
+
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-family: $font-title;
+        display: flex;
+        align-items: end;
+        color: rgba($color-white, 0.5);
+
+        width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        transition:
+          left 0.3s ease,
+          width 0s 0.1s,
+          padding 0s 0.1s;
+        border-radius: 5px;
+
+        @include respond(tab-land) {
+          display: none;
+        }
+      }
+
+      &-img {
+        margin: 1rem 2rem;
+        width: 25rem;
+        border-radius: 5px;
+
+        @include respond(desktop) {
+          width: 20rem;
+        }
+
+        &-container {
+          position: relative;
+          width: 25rem;
+          height: 37rem;
+          margin: 0 2rem;
+          border-radius: 5px;
+
+          &:hover {
+            .homepage__new-skates-dark {
+              left: 0;
+              width: 100%;
+              transition: left 0.3s ease;
+              padding: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__history {
+    background: url(https://wallpapercave.com/wp/wp2593165.jpg) center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+
+    &-content {
+      display: flex;
+      width: 30%;
+      margin: 0 auto;
+      position: relative;
+      top: 30%;
+
+      @include respond(desktop) {
+        width: 50%;
+      }
+
+      @include respond(tab-land) {
+        width: 60%;
+      }
+      @include respond(tab-port) {
+        width: 70%;
+      }
+      @include respond(phone) {
+        width: 90%;
+      }
+    }
+
+    &-text {
+      padding: 14rem 7rem 6rem 7rem;
+      position: relative;
+      background-color: $color-black;
+      color: $color-white;
+
+      @include respond(desktop) {
+        padding: 10rem 3rem 4rem 3rem;
+      }
+    }
+
+    &-btn {
+      @include button;
+      color: $color-white;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+
+      &-container {
+        position: absolute;
+        bottom: -1rem;
+        right: 5rem;
+      }
+    }
+
+    &-title {
+      font-size: 5rem;
+      color: $color-white;
+      letter-spacing: 7px;
+      position: relative;
+      left: 5rem;
+      z-index: 2;
+    }
+  }
+
+  &__connect {
+    position: relative;
+
+    &-title {
+      font-size: 5rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-family: $font-title;
+      font-weight: 700;
+      transition: all 0.2s;
+      cursor: pointer;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      @include respond(tab-port) {
+        font-size: 4rem;
+      }
+      @include respond(phone) {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+
+      &:hover {
+        color: $color-green;
+      }
+    }
+
+    &-img {
+      width: 100vw;
+    }
+  }
+}

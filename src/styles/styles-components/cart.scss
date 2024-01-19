@@ -1,0 +1,93 @@
+.cart {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 20vw;
+  background-color: $color-white;
+
+  @include respond(tab-land) {
+    width: 35vw;
+  }
+
+  &__container {
+    height: 80vh;
+    background-color: rgba($color-green, 0.3);
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    @include respond(tab-land) {
+      height: 70vh;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__title {
+    background-color: $color-black;
+    color: $color-white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  &__empty {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  &__item {
+    padding: 3rem;
+    display: flex;
+    position: relative;
+
+    &-content {
+      padding: 1rem;
+    }
+
+    &-name {
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__img {
+    width: 7rem;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__delete {
+    width: 4rem;
+    height: 4rem;
+
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: top;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      fill: $color-green;
+      transform: scale(1.1) translateY(-50%);
+    }
+  }
+
+  &__total-price {
+    color: $color-black;
+
+    position: absolute;
+    text-align: center;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}

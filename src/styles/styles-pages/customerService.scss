@@ -1,0 +1,52 @@
+.cust {
+  @include base;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    height: 35rem;
+
+    @include respond(phone) {
+      height: 25rem;
+    }
+  }
+
+  &__title {
+    font-size: 6rem;
+    letter-spacing: 15px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__img {
+    @include respond(tab-land) {
+      width: 60vw;
+    }
+    @include respond(phone) {
+      width: 70vw;
+    }
+
+    &-container {
+      position: absolute;
+      right: 0;
+
+      @include respond(phone) {
+        right: -10%;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25rem;
+    gap: 3rem;
+
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+  }
+}
